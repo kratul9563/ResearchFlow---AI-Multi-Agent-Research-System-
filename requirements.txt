@@ -53,3 +53,5 @@ pypdf>=5.0.0
 # Optional: Retry Mechanism
 tenacity>=9.1.0
 langchain-groq>=0.2.0
+streamlit>=1.46.0
+langchain-google-genai>=2.1.0
