@@ -14,7 +14,7 @@ def web_search(query : str) -> str:
     '''
     Search the web for recent and reliable information on a topic. Returns titles, URLs and snippets.
     '''
-    results = tavily.search(query=query,topic="general",search_depth="advanced", max_results=5)
+    results = tavily.search(query=query,topic="general",search_depth="advanced", max_results=3)
 
     out = []
 
@@ -32,7 +32,7 @@ def scrape_url(url : str) -> str:
         soup = BeautifulSoup(resp.text, "html.parser")
         for tag in soup(["script","style","nav","footer"]):
             tag.decompose()
-        return soup.get_text(separator=" ", strip=True)[:10000]
+        return soup.get_text(separator=" ", strip=True)[:6000]
     except Exception as e:
         return f"Could not scrape URL: {str(e)}"
 
